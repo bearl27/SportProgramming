@@ -1,4 +1,8 @@
 {
     "github.copilot.editor.enableCodeActions": false,
-    "github.copilot.editor.enableAutoCompletions": false
+    "github.copilot.editor.enableAutoCompletions": false,
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "stack": "cpp"
+    }
 }
