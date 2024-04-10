@@ -3,6 +3,7 @@
     "github.copilot.editor.enableAutoCompletions": false,
     "files.associations": {
         "*.embeddedhtml": "html",
-        "stack": "cpp"
+        "stack": "cpp",
+        "iostream": "cpp"
     }
 }
