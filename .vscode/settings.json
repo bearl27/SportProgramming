@@ -4,6 +4,7 @@
     "files.associations": {
         "*.embeddedhtml": "html",
         "stack": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "ostream": "cpp"
     }
 }
