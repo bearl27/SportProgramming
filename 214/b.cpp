@@ -30,18 +30,16 @@ using piii = pair<pii, pii>;
 ///////////////////////////////////////
 
 int main(){
-    int n;
-    cin >> n;
-    int a;
-    vector<pair<int,int>> v;
-    REP(i,n){
-        cin >> a;
-        v.push_back(make_pair(a,i+1));
+    int s,t;
+    cin >> s >> t;
+    int cnt;
+    for(int a = 0; a <= s;a++){
+        for(int b = 0; b <= s-a;b++){
+            for(int c = 0; c <= s-a-b;c++){
+                if(a*b*c <= t)cnt++;
+            }
+        }
     }
-    sort(v.begin(),v.end(),greater<pair<int,int>>());
-    cout << v[1].second << endl;
-    // REP(i,n){
-    //     cout << v[i].first << " " << v[i].second << endl;
-    // }
+    cout << cnt << endl;
     return 0;
 }
