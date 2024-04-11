@@ -27,10 +27,9 @@ using vpii = vector<pii>;
 ///////////////////////////////////////
 
 int main(){
-    string s;
-    cin  >> s;
-    int num = s.size();
-    s[num-1] = '4';
-    cout << s << endl;
+    int a,b,c,d;
+    cin >> a >> b >> c >> d;
+    cout << (a+b) * (c-d) << endl;
+    cout << "Takahashi" << endl;
     return 0;
 }

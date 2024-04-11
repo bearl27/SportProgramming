@@ -27,10 +27,9 @@ using vpii = vector<pii>;
 ///////////////////////////////////////
 
 int main(){
-    string s;
-    cin  >> s;
-    int num = s.size();
-    s[num-1] = '4';
-    cout << s << endl;
+    int b,g;
+    cin >> b >> g;
+    if(b > g)cout << "Bat" << endl;
+    else cout << "Glove" << endl;
     return 0;
 }
