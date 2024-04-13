@@ -1,0 +1,35 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+#include<string>
+#include<map>
+#define _USE_MATH_DEFINES
+#include<math.h>
+#include<queue>
+#include<deque>
+#include<stack>
+#include<cstdio>
+#include<utility>
+#include<set>
+#include<list>
+#include<cmath>
+#include<stdio.h>
+#include<string.h>
+#include<iomanip>
+#include<cstdio>
+#include<cstdlib>
+#include<cstring>
+using namespace std;
+using ll = long long;
+using pii = pair<int, int>;
+using vpii = vector<pii>;
+
+///////////////////////////////////////
+
+int main(){
+    string n;
+    cin >> n;
+    for(size_t i = n.length();i<4;i++)n = "0"+n;
+    cout << n << endl;
+    return 0;
+}
