@@ -23,14 +23,16 @@ using namespace std;
 using ll = long long;
 using pii = pair<int, int>;
 using vpii = vector<pii>;
-using pll = pair<ll, ll>;
-using vpll = vector<pll>;
-using vi = vector<int>;
-using vvi = vector<vector<int>>;
 
 ///////////////////////////////////////
 
 int main(){
-
+    int x;
+    cin >> x;
+    if(x % 100 == 0 && x != 0){
+        cout << "Yes" << endl;
+    }else{
+        cout << "No" << endl;
+    }
     return 0;
 }

@@ -23,14 +23,19 @@ using namespace std;
 using ll = long long;
 using pii = pair<int, int>;
 using vpii = vector<pii>;
-using pll = pair<ll, ll>;
-using vpll = vector<pll>;
-using vi = vector<int>;
-using vvi = vector<vector<int>>;
 
 ///////////////////////////////////////
 
 int main(){
-
+    string s;
+    cin >> s;
+    vector<string> v;
+    for(int i = 0; i < s.size(); i++){
+        string t = s.substr(i) + s.substr(0, i);
+        v.push_back(t);
+    }
+    sort(v.begin(), v.end());
+    cout << v[0] << endl;
+    cout << v[v.size() - 1] << endl;
     return 0;
 }

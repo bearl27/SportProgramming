@@ -23,14 +23,20 @@ using namespace std;
 using ll = long long;
 using pii = pair<int, int>;
 using vpii = vector<pii>;
-using pll = pair<ll, ll>;
-using vpll = vector<pll>;
-using vi = vector<int>;
-using vvi = vector<vector<int>>;
 
 ///////////////////////////////////////
 
+
+
 int main(){
+    string s;
+    cin >> s;
+    size_t n = s.size();
+    if(s[n - 1] == 'r' && s[n - 2] == 'e'){
+        cout << "er" << endl;
+    }else{
+        cout << "ist" << endl;
+    }
 
     return 0;
 }
