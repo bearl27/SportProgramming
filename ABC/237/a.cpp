@@ -30,6 +30,11 @@ using vpll = vector<pll>;
 ///////////////////////////////////////
 
 int main(){
-
+    ll n;
+    cin >> n;
+    if(-1 * pow(2,31) <= n && n < pow(2,31))
+        cout << "Yes" << endl;
+    else
+        cout << "No" << endl;
     return 0;
 }
