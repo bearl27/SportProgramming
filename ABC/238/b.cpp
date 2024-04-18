@@ -30,6 +30,27 @@ using vpll = vector<pll>;
 ///////////////////////////////////////
 
 int main(){
-
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    rep(i, n){
+        cin >> a[i];
+    }
+    vector<int> arg(n);
+    rep(i, n){
+        if(i == 0)arg[i] = a[i];
+        else arg[i] = (a[i] + arg[i-1])%360;
+        ////////
+        //cout << a[i] << " " << arg[i] << endl;
+    }
+    arg.push_back(360);
+    sort(arg.begin(), arg.end());
+    int ans = arg[0];
+    rep(i,n){
+        ////////////
+        //cout << ans << endl;
+        if(ans < arg[i+1] - arg[i]) ans = arg[i+1] - arg[i];
+    }
+    cout << ans << endl;
     return 0;
 }

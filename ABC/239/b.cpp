@@ -30,6 +30,17 @@ using vpll = vector<pll>;
 ///////////////////////////////////////
 
 int main(){
-
+    ll x;
+    cin >> x;
+    bool flag = false;
+    int mod = x % 10;
+    if(-10 < x && x < 0){
+        flag = true;
+    }
+    x /= 10;
+    if((x < 0 && mod != 0)|| flag){
+        x -= 1;
+    }
+    cout << x << endl;
     return 0;
 }

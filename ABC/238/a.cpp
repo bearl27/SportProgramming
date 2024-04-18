@@ -30,6 +30,13 @@ using vpll = vector<pll>;
 ///////////////////////////////////////
 
 int main(){
+    int n;
+    cin >> n;
+    if(pow(2,n) > (n*n))
+        cout << "Yes" << endl;
+    else
+        cout << "No" << endl;
 
+    //cout << sq_n << " " << n_2 << endl;
     return 0;
 }
