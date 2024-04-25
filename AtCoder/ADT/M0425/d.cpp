@@ -3,8 +3,6 @@
 #include<algorithm>
 #include<string>
 #include<map>
-#define _USE_MATH_DEFINES
-#include<math.h>
 #include<queue>
 #include<deque>
 #include<stack>
@@ -13,11 +11,8 @@
 #include<set>
 #include<list>
 #include<cmath>
-#include<stdio.h>
-#include<string.h>
 #include<iomanip>
 #include<cstdio>
-#include<cstdlib>
 #include<cstring>
 using namespace std;
 using ll = long long;
@@ -30,10 +25,25 @@ using vpll = vector<pll>;
 ///////////////////////////////////////
 
 int main(){
-    int n,m,k;
-    cin >> n >> m >> k;
-    ll ans;
+    int m;
+    cin >> m;
+    int D[100] = {0};
+    int days = 0;
+    rep(i,m){
+        cin >> D[i];
+        days += D[i];
+    }
+    int midDay = (days+1) / 2;
+    int ansMonth=0,ansDay=midDay;
+    rep(i,m){
+        if(D[i] >= ansDay){
+            ansMonth = i+1;;
+            break;
+        }
+        ansDay -= D[i];
+    }
+    cout << ansMonth << " " << ansDay << endl;
 
-    cout << ans%998244353 << endl;
+
     return 0;
 }

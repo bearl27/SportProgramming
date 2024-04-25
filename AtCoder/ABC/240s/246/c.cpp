@@ -28,12 +28,16 @@ using vpll = vector<pll>;
 #define rep(i, n) for(int i = 0; i < (n); i++)
 
 ///////////////////////////////////////
+string makeS(int n){
+    if(n == 1) return "1";
+    else{
+        return makeS(n-1) + " " + to_string(n) + " " + makeS(n-1);
+    }
+}
 
 int main(){
-    int n,m,k;
-    cin >> n >> m >> k;
-    ll ans;
-
-    cout << ans%998244353 << endl;
+    int n;
+    cin >> n;
+    cout << makeS(n) << endl;
     return 0;
 }

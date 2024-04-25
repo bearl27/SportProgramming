@@ -3,8 +3,6 @@
 #include<algorithm>
 #include<string>
 #include<map>
-#define _USE_MATH_DEFINES
-#include<math.h>
 #include<queue>
 #include<deque>
 #include<stack>
@@ -13,11 +11,8 @@
 #include<set>
 #include<list>
 #include<cmath>
-#include<stdio.h>
-#include<string.h>
 #include<iomanip>
 #include<cstdio>
-#include<cstdlib>
 #include<cstring>
 using namespace std;
 using ll = long long;

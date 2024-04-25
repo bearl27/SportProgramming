@@ -3,8 +3,6 @@
 #include<algorithm>
 #include<string>
 #include<map>
-#define _USE_MATH_DEFINES
-#include<math.h>
 #include<queue>
 #include<deque>
 #include<stack>
@@ -13,11 +11,8 @@
 #include<set>
 #include<list>
 #include<cmath>
-#include<stdio.h>
-#include<string.h>
 #include<iomanip>
 #include<cstdio>
-#include<cstdlib>
 #include<cstring>
 using namespace std;
 using ll = long long;
@@ -26,14 +21,13 @@ using vpii = vector<pii>;
 using pll = pair<ll, ll>;
 using vpll = vector<pll>;
 #define rep(i, n) for(int i = 0; i < (n); i++)
+#define rep1(i, n) for(int i = 1; i <= (n); i++)
 
 ///////////////////////////////////////
 
 int main(){
-    int n,m,k;
-    cin >> n >> m >> k;
-    ll ans;
+    int n,h,w;
+    cin >> n >> h >> w;
+    bool tyle[h][w] = {false};
 
-    cout << ans%998244353 << endl;
-    return 0;
 }

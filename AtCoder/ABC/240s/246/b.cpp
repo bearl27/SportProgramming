@@ -30,10 +30,24 @@ using vpll = vector<pll>;
 ///////////////////////////////////////
 
 int main(){
-    int n,m,k;
-    cin >> n >> m >> k;
-    ll ans;
-
-    cout << ans%998244353 << endl;
+    int n;
+    cin >> n;
+    string s[n],t[n];
+    rep(i,n) cin >> s[i] >> t[i];
+    map<string,int> mp;
+    rep(i,n){
+        mp[s[i]]++;
+        mp[t[i]]++;
+    }
+    rep(i,n){
+        if(s[i] == t[i] && mp[s[i]] == 2){
+            continue;
+        }
+        if(mp[s[i]] > 1 && mp[t[i]] > 1){
+            cout << "No" << endl;
+            return 0;
+        }
+    }
+    cout << "Yes" << endl;
     return 0;
 }

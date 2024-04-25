@@ -3,8 +3,6 @@
 #include<algorithm>
 #include<string>
 #include<map>
-#define _USE_MATH_DEFINES
-#include<math.h>
 #include<queue>
 #include<deque>
 #include<stack>
@@ -13,11 +11,8 @@
 #include<set>
 #include<list>
 #include<cmath>
-#include<stdio.h>
-#include<string.h>
 #include<iomanip>
 #include<cstdio>
-#include<cstdlib>
 #include<cstring>
 using namespace std;
 using ll = long long;
@@ -30,10 +25,24 @@ using vpll = vector<pll>;
 ///////////////////////////////////////
 
 int main(){
-    int n,m,k;
-    cin >> n >> m >> k;
-    ll ans;
-
-    cout << ans%998244353 << endl;
-    return 0;
+    ll n;
+    cin >> n;
+    string s;
+    cin >> s;
+    bool quation_flag = false;
+    string ans = "";
+    for(auto c : s){
+        if(c == '"'){
+            quation_flag = !quation_flag;
+        }else if(c == ','){
+            if(quation_flag){
+                ans += ",";
+            }else{
+                ans += ".";
+            }
+        }else{
+            ans += c;
+        }
+    }
+    cout << ans << endl;
 }
