@@ -3,8 +3,6 @@
 #include<algorithm>
 #include<string>
 #include<map>
-#define _USE_MATH_DEFINES
-#include<math.h>
 #include<queue>
 #include<deque>
 #include<stack>
@@ -13,11 +11,8 @@
 #include<set>
 #include<list>
 #include<cmath>
-#include<stdio.h>
-#include<string.h>
 #include<iomanip>
 #include<cstdio>
-#include<cstdlib>
 #include<cstring>
 using namespace std;
 using ll = long long;
@@ -28,16 +23,29 @@ using vpll = vector<pll>;
 #define rep(i, n) for(int i = 0; i < (n); i++)
 
 ///////////////////////////////////////
-string makeS(int n){
-    if(n == 1) return "1";
-    else{
-        return makeS(n-1) + " " + to_string(n) + " " + makeS(n-1);
-    }
-}
 
 int main(){
-    int n;
-    cin >> n;
-    cout << makeS(n) << endl;
+    string s;
+    cin >> s;
+    bool bigFlag = false , smallFlag = false;
+    map<char, int> mp;
+    for(auto c : s){
+        mp[c]++;
+        if(mp[c] == 2){
+            cout << "No" << endl;
+            return 0;
+        }
+        if(c >= 'A' && c <= 'Z'){
+            bigFlag = true;
+        }
+        if (c >= 'a' && c <= 'z'){
+            smallFlag = true;
+        }
+    }
+    if(bigFlag && smallFlag){
+        cout << "Yes" << endl;
+    }else{
+        cout << "No" << endl;
+    }
     return 0;
 }

@@ -3,8 +3,6 @@
 #include<algorithm>
 #include<string>
 #include<map>
-#define _USE_MATH_DEFINES
-#include<math.h>
 #include<queue>
 #include<deque>
 #include<stack>
@@ -13,11 +11,8 @@
 #include<set>
 #include<list>
 #include<cmath>
-#include<stdio.h>
-#include<string.h>
 #include<iomanip>
 #include<cstdio>
-#include<cstdlib>
 #include<cstring>
 using namespace std;
 using ll = long long;
@@ -28,16 +23,26 @@ using vpll = vector<pll>;
 #define rep(i, n) for(int i = 0; i < (n); i++)
 
 ///////////////////////////////////////
-string makeS(int n){
-    if(n == 1) return "1";
-    else{
-        return makeS(n-1) + " " + to_string(n) + " " + makeS(n-1);
-    }
-}
-
 int main(){
-    int n;
-    cin >> n;
-    cout << makeS(n) << endl;
+    //入力
+    int n,k;
+    cin >> n >> k;
+
+    string s;
+    //各文字列の文字数をカウント
+
+    rep(i,n){
+        cin >> s;
+        for(auto c: s){
+            dp[i][c]++;
+        }
+    }
+
+    int now=0;
+
+
+
+
+
     return 0;
 }

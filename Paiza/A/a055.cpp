@@ -30,45 +30,6 @@ using vpll = vector<pll>;
 ///////////////////////////////////////
 
 int main(){
-    ll n,k,x;
-    vector<ll> a;
-    ll ans = 0;
 
-    cin>>n>>k>>x;
-    rep(i,n){
-        ll tmp;
-        cin>>tmp;
-        a.push_back(tmp);
-        ans += tmp;
-    }
-    if(x == 0){
-        cout<<ans<<endl;
-        return 0;
-    }
-
-    ll cnt = 0;
-    rep(i,n){
-        cnt += a[i]/x;
-    }
-    cnt = min(cnt,k);
-    ans -= cnt*x;
-    k -= cnt;
-    rep(i,n){
-        a[i] = a[i]%x;
-    }
-    sort(a.rbegin(),a.rend());
-    rep(i,n){
-        if(k <= 0){
-            break;
-        }
-        ans -= a[i];
-        if(ans < 0){
-            ans = 0;
-            break;
-        }
-        k--;
-    }
-    cout<<ans<<endl;
     return 0;
-
 }
