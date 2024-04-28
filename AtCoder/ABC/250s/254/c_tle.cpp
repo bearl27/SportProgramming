@@ -23,33 +23,22 @@ using vpll = vector<pll>;
 #define rep(i, n) for (int i = 0; i < (n); i++)
 
 ///////////////////////////////////////
-int main() {
-
-	int N,K;
-	cin>>N>>K;
-
-	vector<vector<int>> b(K);
-
-	vector<int> a(N);
-	for(int i=0;i<N;i++){
-		cin>>a[i];
-		b[i%K].push_back(a[i]);
-	}
-
-	for(int i=0;i<K;i++){
-		sort(b[i].rbegin(),b[i].rend());
-	}
-
-	sort(a.begin(),a.end());
-
-	vector<int> na;
-	for(int i=0;i<N;i++){
-		na.push_back(b[i%K].back());
-		b[i%K].pop_back();
-	}
-
-	if(a==na)cout<<"Yes"<<endl;
-	else cout<<"No"<<endl;
-
+int main()
+{
+    int n,k;
+    cin >> n >> k;
+    vector<int> A (n);
+    rep(i,n)cin >> A[i];
+    for(int i=0;i+k < n;i++){
+        for(int j=i; j+k < n;j += k){
+            if(A[j] > A[j+k]){
+                swap(A[j],A[j+k]);
+            }
+        }
+    }
+    vector<int> B = A;
+    sort(A.begin(),A.end());
+    if(A == B)cout << "Yes" << endl;
+    else      cout << "No"  << endl;
     return 0;
 }
