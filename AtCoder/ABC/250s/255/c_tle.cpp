@@ -27,7 +27,14 @@ int main() {
     ll x,a,d,n;
     cin >> x >> a >> d >> n;
     ll dis = abs(x-a);
-    if(x < 0 && )
+    rep(i , n-1){
+        a = a + d;
+        if(dis > abs(x-a)){
+            dis = abs(x-a);
+        }else{
+            break;
+        }
+    }
     cout << dis << endl;
 
     return 0;

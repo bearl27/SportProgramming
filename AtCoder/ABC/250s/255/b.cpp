@@ -24,9 +24,45 @@ using vpll = vector<pll>;
 
 ///////////////////////////////////////
 int main() {
-
+//入力
 	int n,k;
+    vector<int> haveLight;//-1しないと
+    vector<ll> X,Y;
+    vector<ll>lightX,lightY;
+    cin >> n >> k;
+    rep(i,k){
+        int light;
+        cin >> light;
+        haveLight.push_back(--light);
+    }
+    rep(i,n){
+        int x,y;
+        cin >> x >> y;
+        X.push_back(x);
+        Y.push_back(y);
+    }
+    rep(i,k){
+        lightX.push_back(X[haveLight[i]]);
+        lightY.push_back(Y[haveLight[i]]);
+    }
 
+//計算
+    ll ans = 0;;
+    ll minDis = 0;
+    ll dis = 0;
+    rep(i,n){
+        rep(j,k){
+            dis = (X[i]- lightX[j])*(X[i]- lightX[j])+(Y[i] - lightY[j])*(Y[i] - lightY[j]);
+            if(j == 0){
+                minDis = dis;
+            }else{
+                minDis = min(minDis,dis);
+            }
+        }
+        ans = max(minDis,ans);
+    }
+
+    printf("%.12lf\n",sqrt((double)ans));
 
     return 0;
 }

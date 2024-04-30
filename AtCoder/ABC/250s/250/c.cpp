@@ -28,53 +28,44 @@ int main()
 {
     int n, q;
     cin >> n >> q;
-    int balls[n + 1];
+    vector<int> ballPlace(n + 1),posBall(n + 1);///ボールの場所，その場所のボール
+    
     rep1(i, n)
     {
-        balls[i] = i;
+        ballPlace[i] = i;
+        posBall[i] = i;
     }
-    int swap_num[q + 1];
-    rep1(i, q)
+
+    int swap_num[q];
+    rep(i, q)
     {
         cin >> swap_num[i];
     }
-    rep1(i, q)
+
+
+    rep(i, q)
     {
-        rep1(j, n)
-        {
-            if (balls[j] == swap_num[i])
-            {
-                if (j < n)
-                {
-                    swap(balls[j], balls[j + 1]);
-                    //cout << "Yes" << endl;
-                    break;
-                }
-                else
-                {
-                    swap(balls[j], balls[j - 1]);
-                    //cout << "Yes" << endl;
-                    break;
-                }
-            }
+        int current = ballPlace[swap_num[i]];
+        int next = current;
+        if(current == n){
+            next = current - 1;
+        }else{
+            next = current + 1;
         }
-        ////
-        // rep1(k,n){
-        //     cout << balls[k];
-        //     if(k != n){
-        //         cout << " ";
-        //     }
-        // }
-        // cout << endl;
+        int currentBall = posBall[current];
+        int nextBall = posBall[next];
+        swap(posBall[current], posBall[next]);
+        swap(ballPlace[currentBall], ballPlace[nextBall]);
     }
+
     rep1(i, n)
     {
-        cout << balls[i];
-        if (i != n)
-        {
+        cout << posBall[i];
+        if(i != n){
             cout << " ";
         }
     }
     cout << endl;
+        
     return 0;
 }
