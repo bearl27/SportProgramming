@@ -26,6 +26,25 @@ using vpll = vector<pll>;
 ///////////////////////////////////////
 
 int main(){
+    //in
+    int n,q;
+    cin >> n >> q;
+    string A;
+    cin >> A;
+    //do
+    int now = 0;
+    rep(i,q){
+        int t,f;
+        cin >> t >> f;
+        if(t == 1){
+            now = (now - f) % n;
+            now = (now + n) % n;
+            // //debug
+            //cout << now << endl;
+        }else{
+            cout << A[(now + f - 1) % n] << endl;
+        }
+    }
 
     return 0;
 }

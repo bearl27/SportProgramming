@@ -26,6 +26,36 @@ using vpll = vector<pll>;
 ///////////////////////////////////////
 
 int main(){
+    //in
+    int n;
+    cin >> n;
+    int V[n][n];
+    rep(i,n){
+        string s;
+        cin >> s;
+        rep(j,n){
+            if(s[j] == 'W'){
+                V[i][j] = 1;
+            }else if(s[j] == 'L'){
+                V[i][j] = -1;
+            }else{
+                V[i][j] = 0;
+            }
+        }
+    }
+
+    //do
+    rep(i,n){
+        rep(j,n){
+            if(V[i][j] != -1*V[j][i]){
+                cout << "incorrect" << endl;
+                return 0;
+            }
+        }
+    }
+
+    //out
+    cout << "correct" << endl;
 
     return 0;
 }

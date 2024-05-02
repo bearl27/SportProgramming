@@ -26,6 +26,19 @@ using vpll = vector<pll>;
 ///////////////////////////////////////
 
 int main(){
-
+    int n;
+    cin >> n;
+    vector<int> A(n);
+    rep(i,n){
+        cin >> A.at(i);
+    }
+    int sum = 0;
+    int sub_cnt = 0;
+    for(int i = n-1;i >=0;i--){
+        sum += A.at(i);
+        if(sum >= 4)break;
+        sub_cnt++;
+    }
+    cout << n-sub_cnt << endl;
     return 0;
 }

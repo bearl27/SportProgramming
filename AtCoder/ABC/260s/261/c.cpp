@@ -26,6 +26,19 @@ using vpll = vector<pll>;
 ///////////////////////////////////////
 
 int main(){
+    //in
+    int n;
+    map<string,int> mp;
+    cin >> n;
+    rep(i,n){
+        string s;
+        cin >> s;
+        mp[s]++;
+        if(mp[s] > 1){
+            s = s + "(" + to_string(mp[s]-1) + ")";
+        }
+        cout << s << endl;
+    }
 
     return 0;
 }

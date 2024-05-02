@@ -26,6 +26,23 @@ using vpll = vector<pll>;
 ///////////////////////////////////////
 
 int main(){
+    //in
+    int n,q;
+    cin >> n >> q;
+    string A;
+    cin >> A;
+    //do
+    rep(i,q){
+        int t,f;
+        cin >> t >> f;
+        if(t == 1){
+            A = A.substr(A.size()-f) + A.substr(0,A.size()-f);
+            // //debug
+            //cout << A << endl;
+        }else{
+            cout << A[f-1] << endl;
+        }
+    }
 
     return 0;
 }

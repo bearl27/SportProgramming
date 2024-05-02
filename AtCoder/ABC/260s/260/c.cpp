@@ -26,6 +26,23 @@ using vpll = vector<pll>;
 ///////////////////////////////////////
 
 int main(){
+    //in
+    int n, x, y;
+    cin >> n >> x >> y;
+    ll red = 1, blue = 0;
+
+    //do
+    rep(i,n-1){
+        blue += x*red;
+        red = blue + red;
+        blue = blue*y;
+
+        //debug
+        //cout << n-i-1 << ":" << red << " " << blue << endl;
+    }
+
+    //out
+    cout << blue << endl;
 
     return 0;
 }

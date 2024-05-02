@@ -26,6 +26,18 @@ using vpll = vector<pll>;
 ///////////////////////////////////////
 
 int main(){
+    //in
+    double x,y;
+    int d;
+    cin >> x >> y >> d;
+    //do
+    double r = sqrt(x*x + y*y);
+    double now_d = atan2(y,x);
+    x = r * cos(now_d + d * M_PI / 180);
+    y = r * sin(now_d + d * M_PI / 180);
+
+    //out
+    cout << fixed << setprecision(10) << x << " " << y << endl;
 
     return 0;
 }

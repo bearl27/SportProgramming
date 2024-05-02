@@ -26,6 +26,30 @@ using vpll = vector<pll>;
 ///////////////////////////////////////
 
 int main(){
+    //in
+    string s,t;
+    cin >> s >> t;
+    //do
+    string ans = "Yes";
+    int s_now = 0;
+    rep(i,t.size()){
+        if(s[s_now] == t[i]){
+            s_now++;
+        }else{
+            if(s_now >= 2){
+                if(s[s_now-1] == s[s_now-2] && s[s_now-1]==t[i]){
+                    continue;
+                }
+            }
+            ans = "No";
+            break;
+        }
+    }
+    if(s_now != s.size()){
+        ans = "No";
+    }
 
+    //out
+    cout << ans << endl;
     return 0;
 }
