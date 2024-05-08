@@ -25,27 +25,20 @@ using vpll = vector<pll>;
 
 ///////////////////////////////////////
 
-int main() {
-    int n, m;
-    cin >> n >> m;
-    vector adj(n, vector<bool>(n));
-    for (int i = 0; i < m; ++i) {
-        int u, v;
-        cin >> u >> v;
-        u--, v--;
-        adj[u][v] = adj[v][u] = true;
+
+int main(){
+    //in
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    rep1(i,n){
+        cin >> a[i];
     }
-    int ans = 0;
-    for (int i = 0; i < n; ++i) {
-        for (int j = i + 1; j < n; ++j) {
-            for (int k = j + 1; k < n; ++k) {
-                if (adj[i][j] && adj[j][k] && adj[k][i]) {
-                    ans++;
-                }
-            }
-        }
+    //solve
+    vector<int> dp(n);
+    rep1(i,n){
+        dp[i]=dp[a[i]-1]+1;
     }
-    cout << ans << '\n';
+    cout << dp[n-1] << endl;
     return 0;
 }
-

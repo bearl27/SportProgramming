@@ -26,6 +26,24 @@ using vpll = vector<pll>;
 ///////////////////////////////////////
 
 int main(){
-
+    //in
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    int same = 0;
+    rep(i,n){
+        cin >> a[i];
+        a[i]--; // 0-indexedに変換
+        if(a[i] == i){
+            same++;
+        }
+    }
+    ll ans = ll(same)*ll(same-1)/2;
+    rep(i,n){
+        if(a[i] > i && a[a[i]] == i){
+            ans++;
+        }
+    }
+    cout << ans << endl;
     return 0;
 }
