@@ -24,27 +24,16 @@ using vpll = vector<pll>;
 #define rep1(i,n) for(int i = 1; i < (n); i++)
 
 ///////////////////////////////////////
-ll mod = 100000000;
+ll mod =  998244353;
 
 int main(){
     //in
-    int n;
+    ll n;
     cin >> n;
-    vector<int> a(n);
-    rep(i,n) cin >> a[i];
-    sort(a.begin(),a.end());
-    int r = n;
-    ll cnt = 0, ans = 0;
-    rep(i,n){
-        r = max(r, i+1);
-        while(r-1 > i and a[r-1] + a[i] >= mod){
-            r--;
-        }
-        cnt += n - r;
-    }
-    rep(i,n)ans += ll(a[i]) * (n-1);
-    ans -= cnt * mod;
+    ll ans = n % mod;
+    if(ans < 0) ans = mod + ans;
+
+    //out
     cout << ans << endl;
     return 0;
-
 }

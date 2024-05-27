@@ -24,27 +24,31 @@ using vpll = vector<pll>;
 #define rep1(i,n) for(int i = 1; i < (n); i++)
 
 ///////////////////////////////////////
-ll mod = 100000000;
+bool compare(pii a, pii b){
+    if(a.first == b.first){
+        return a.second < b.second;
+    }else{
+        return a.first < b.first;
+    }
+}
 
 int main(){
-    //in
     int n;
     cin >> n;
-    vector<int> a(n);
-    rep(i,n) cin >> a[i];
-    sort(a.begin(),a.end());
-    int r = n;
-    ll cnt = 0, ans = 0;
+    vpii p(n);
     rep(i,n){
-        r = max(r, i+1);
-        while(r-1 > i and a[r-1] + a[i] >= mod){
-            r--;
-        }
-        cnt += n - r;
+        cin >> p[i].first >> p[i].second;
     }
-    rep(i,n)ans += ll(a[i]) * (n-1);
-    ans -= cnt * mod;
+
+
+    //debug
+    // rep(i,n){
+    //     cout << p[i].first << " " << p[i].second << endl;
+    // }
+    int ans = 0;
+    rep(i,n){
+
+    }
     cout << ans << endl;
     return 0;
-
 }

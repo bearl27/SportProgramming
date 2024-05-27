@@ -24,27 +24,27 @@ using vpll = vector<pll>;
 #define rep1(i,n) for(int i = 1; i < (n); i++)
 
 ///////////////////////////////////////
-ll mod = 100000000;
 
 int main(){
     //in
-    int n;
-    cin >> n;
-    vector<int> a(n);
-    rep(i,n) cin >> a[i];
-    sort(a.begin(),a.end());
-    int r = n;
-    ll cnt = 0, ans = 0;
-    rep(i,n){
-        r = max(r, i+1);
-        while(r-1 > i and a[r-1] + a[i] >= mod){
-            r--;
-        }
-        cnt += n - r;
+    int X[4],Y[4];
+    rep(i,4){
+    cin >> X[i] >> Y[i];
     }
-    rep(i,n)ans += ll(a[i]) * (n-1);
-    ans -= cnt * mod;
-    cout << ans << endl;
-    return 0;
+	int maxAC_x = max(X[0],X[2]);
+	int minAC_x = min(X[0],X[2]);
+	int maxBD_x = max(X[1],X[3]);
+	int minBD_x = min(X[1],X[3]);
+	int maxAC_y = max(Y[0],Y[2]);
+	int minAC_y = min(Y[0],Y[2]);
+	int maxBD_y = max(Y[1],Y[3]);
+	int minBD_y = min(Y[1],Y[3]);
 
+	//四角形が凸四角形であるかどうかを判定
+	if(maxAC_x <= minBD_x && maxAC_y <= minBD_y && minAC_x <= maxBD_x && minAC_y <= maxBD_y){
+        cout << "YES" << endl;
+    }else{
+        cout << "NO" << endl;
+    }
+    return 0;
 }

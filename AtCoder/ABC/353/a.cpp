@@ -52,6 +52,5 @@ int main(){
         }
     }
     cout << cnt << endl;
-    return 0;
-
+	return 0;
 }
