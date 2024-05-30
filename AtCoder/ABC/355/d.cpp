@@ -40,14 +40,25 @@ int main(){
         cin >> p[i].first >> p[i].second;
     }
 
+    sort(p.begin(),p.end(),compare);
+
 
     //debug
     // rep(i,n){
     //     cout << p[i].first << " " << p[i].second << endl;
     // }
-    int ans = 0;
+    int ans = n*(n-1)/2;
+    int add = 0;
     rep(i,n){
-
+        add = 0;
+        for(int j = i+1; j < n; j++){
+            if(p[i].second < p[j].first){
+                add++;
+            }else{
+                break;
+            }
+        }
+        ans -= add;
     }
     cout << ans << endl;
     return 0;
