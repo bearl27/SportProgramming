@@ -7,7 +7,7 @@
 #include<queue>
 using namespace std;
 
-int main() {
+int main(){
     string line;
     vector<string> lines;
     while (getline(cin, line)) {
@@ -106,7 +106,7 @@ int main() {
             tmp >> num >> stock >> price;
             menu[num] = make_pair(stock, price);
         }
-        vector<queue<int>> waiting(menuKind + 1);
+        vector<queue<int>> waiting(100000);
         for(int i = menuKind + 2; i < lines.size(); i++){
             istringstream tmp(lines[i]);
             string order;
